@@ -1,9 +1,9 @@
 #include <iostream>
 
-/* Implemente uma classe televisão. A televisão tem um controle de volume do som e um controle de seleção de canal. O controle de
-volume permite aumentar ou diminuir a potência do volume de som em uma unidade de cada vez. O controle de canal também permite aumentar e
-diminuir o número do canal em uma unidade, porém, também possibilita trocar para um canal indicado. Também devem existir métodos para consultar
-o valor do volume de som e o canal selecionado. No programa principal, crie uma televisão e troque de canal algumas vezes. Aumente um pouco o volume,
+/* Implemente uma classe televisÃ£o. A televisÃ£o tem um controle de volume do som e um controle de seleÃ§Ã£o de canal. O controle de
+volume permite aumentar ou diminuir a potÃªncia do volume de som em uma unidade de cada vez. O controle de canal tambÃ©m permite aumentar e
+diminuir o nÃºmero do canal em uma unidade, porÃ©m, tambÃ©m possibilita trocar para um canal indicado. TambÃ©m devem existir mÃ©todos para consultar
+o valor do volume de som e o canal selecionado. No programa principal, crie uma televisÃ£o e troque de canal algumas vezes. Aumente um pouco o volume,
 e exiba o valor de ambos os atributos.*/
 
 
@@ -59,47 +59,41 @@ public:
 };
 
 int main(){
-    televisao *t1 = new televisao(0,0);
-    t1->menu();
+    televisao t1(0,0);
     int opcao, canal;
-    cin>>opcao;
     do{
+        t1.menu();
+        cin>>opcao;
+
         switch(opcao){
             case 1:
-                t1->aumentarVolume();
-                cout<<" O volume esta em: "<< t1->getVolume()<<endl;
-                getchar();
+                t1.aumentarVolume();
+                cout<<" O volume esta em: "<< t1.getVolume()<<endl;
                 break;
             case 2:
-                t1->diminuirVolume();
-                cout<<" O volume esta em: "<< t1->getVolume()<<endl;
-                getchar();
+                t1.diminuirVolume();
+                cout<<" O volume esta em: "<< t1.getVolume()<<endl;
                 break;
             case 3:
-                t1->aumentarCanal();
-                cout<<" O canal eh: "<< t1->getCanal()<<endl;
-                getchar();
+                t1.aumentarCanal();
+                cout<<" O canal eh: "<< t1.getCanal()<<endl;
                 break;
             case 4:
-                t1->diminuirCanal();
-                cout<<" O canal eh: "<< t1->getCanal()<<endl;
-                getchar();
+                t1.diminuirCanal();
+                cout<<" O canal eh: "<< t1.getCanal()<<endl;
                 break;
             case 5:
                 cout<<" Qual canal deseja ir: ";
                 cin>> canal;
-                t1->setCanal(canal);
-                cout<<" O canal eh: "<< t1->getCanal()<<endl;
-                getchar();
+                t1.setCanal(canal);
+                cout<<" O canal eh: "<< t1.getCanal()<<endl;
                 break;
             case 6:
-                cout<<" Voce esta no canal "<< t1->getCanal()<<endl;
-                cout<<" O volume esta em "<< t1->getVolume()<<endl;
-                getchar();
+                cout<<" Voce esta no canal "<< t1.getCanal()<<endl;
+                cout<<" O volume esta em "<< t1.getVolume()<<endl;
                 break;
             case 7:
                 cout<<" Desligando..."<<endl;
-                getchar();
                 break;
             }
         }while(opcao != 7);
